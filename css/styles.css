@@ -1,21 +1,28 @@
-body{
+body {
     font-family: "Roboto", sans-serif;
     background-color: #fff;
     color: #434455;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
     margin: 0;
 }
 
-ul, ol {
+ul,
+ol {
     list-style-type: none;
     margin: 0;
     margin: 0;
     padding: 0;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -25,7 +32,7 @@ img {
     height: auto;
 }
 
-button{
+button {
     cursor: pointer;
 }
 
@@ -34,6 +41,7 @@ button{
     padding: 0 15px;
     margin: 0 auto;
 }
+
 .section {
     padding-top: 120px;
     padding-bottom: 120px;
@@ -53,10 +61,11 @@ button{
     overflow: hidden;
 }
 
-    /* #region Header */
+/* #region Header */
 
 .header {
     border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -71,7 +80,7 @@ button{
 }
 
 .logo {
-    font-family: "Raleway", sans-serif;   
+    font-family: "Raleway", sans-serif;
     font-weight: 700;
     font-size: 18px;
     line-height: 1.17;
@@ -105,11 +114,30 @@ button{
     letter-spacing: 0.02em;
     color: #2e2f42;
     padding: 24px 0;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.menu-link:hover, .menu-link:focus {
+.menu-link.current {
+    position: relative;
+}
+
+.menu-link.current::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #404bbf;
+    border-radius: 2px;
+    left: 0;
+    bottom: -1px;
+}
+
+.menu-link:hover,
+.menu-link:focus,
+.menu-link.current {
     color: #404bbf;
 }
+
 .address {
     font-style: normal;
 }
@@ -120,9 +148,7 @@ button{
     gap: 40px;
 }
 
-.address-menu-item {
-    
-}
+.address-menu-item {}
 
 .address-menu-link {
     display: block;
@@ -131,15 +157,23 @@ button{
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-menu-link:hover,
 .address-menu-link:focus {
     color: #404bbf;
 }
-    /* #endregion Header */
+
+/* #endregion Header */
 .hero {
     background-color: #2e2f42;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg.jpg);
+    max-width: 1440px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto;
 }
 
 .hero-section {
@@ -175,12 +209,14 @@ button{
     border-radius: 4px;
     height: 56px;
     min-width: 169px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
 .hero-btn:focus {
     background-color: #404bbf;
 }
+
 .features {}
 
 .features-title {}
@@ -193,6 +229,18 @@ button{
 
 .features-menu-item {
     width: calc((100% - 24px*3)/4);
+}
+
+.features-menu-icon-border {
+    width: 100%;
+    height: 112px;
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
+    background-color: #f4f4fd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
 }
 
 .features-menu-title {
@@ -209,6 +257,7 @@ button{
     line-height: 1.5;
     letter-spacing: 0.02em;
 }
+
 .our-team {
     background-color: #f4f4fd;
 }
@@ -237,6 +286,7 @@ button{
     background-color: #fff;
     border-radius: 0 0 4px 4px;
     width: calc((100% - 24px*3)/4);
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
 .our-team-icon {}
@@ -260,11 +310,48 @@ button{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 8px;
 }
 
 .our-team-item-text-container {
     padding: 32px 0;
 }
+
+.our-team-social-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.our-team-social-item {
+    width: 40px;
+    height: 40px;
+}
+
+.our-team-social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+    border-radius: 50%;
+    background-color: #4d5ae5;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.our-team-item:hover .our-team-social-link,
+.our-team-item:focus .our-team-social-link {
+    background-color: #404bbf;
+}
+
+.our-team-social-icon {
+    fill: #f4f4fd;
+}
+
+
 
 .portfolio {}
 
@@ -293,9 +380,38 @@ button{
 
 .portfolio-item {
     width: calc((100% - 24px*2)/3);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.portfolio-item:hover,
+.portfolio-item:focus {
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-icon-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-item:hover .portfolio-cover-text,
+.portfolio-item:focus .portfolio-cover-text {
+    transform: translateY(0);
+}
 .portfolio-icon {}
+
+.portfolio-cover-text {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #f4f4fd;
+    padding: 40px 32px;
+    background-color: #4d5ae5;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 .portfolio-item-title {
     font-weight: 500;
@@ -318,6 +434,7 @@ button{
     line-height: 1.5;
     letter-spacing: 0.02em;
 }
+
 .footer {
     background-color: #2e2f42;
 }
@@ -325,6 +442,13 @@ button{
 .footer-section {
     padding-top: 100px;
     padding-bottom: 100px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 120px;
 }
 
 .footer-logo {
@@ -342,4 +466,27 @@ button{
     letter-spacing: 0.02em;
     color: #f4f4fd;
     max-width: 264px;
+}
+
+.footer-social-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.footer-social-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 16px;
+}
+
+.our-team-social-link.footer-social-link:hover,
+.our-team-social-link.footer-social-link:focus {
+    background-color: #31d0aa;
 }
